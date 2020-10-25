@@ -2,14 +2,14 @@
   "name": "playground-plugin-codeblock-examples",
   "version": "0.0.1",
   "main": "dist/index.js",
-  "description": "My playground plugin",
+  "description": "Use markdown codeblocks to demo many code samples in the playground",
   "license": "MIT",
   "keywords": [
     "playground-plugin"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/[you]/[repo]"
+    "url": "https://github.com/orta/playground-plugin-codeblock-examples"
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
