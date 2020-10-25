@@ -112,6 +112,11 @@ const makePlugin = (utils: PluginUtils) => {
       }
 
       render()
+      
+      if (selectedIndex !== -1) {
+        selectedIndex -= 1
+        next()
+      }
     },
   }
 
