@@ -1,6 +1,6 @@
 {
   "name": "playground-plugin-codeblock-examples",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "description": "Use markdown codeblocks to demo many code samples in the playground",
   "license": "MIT",

@@ -3,6 +3,7 @@ import type { PlaygroundPlugin, PluginUtils } from "./vendor/playground"
 const makePlugin = (utils: PluginUtils) => {
   let codeblocks = [] as Array<{ code: string, prefix: string, type: string }>
   let selectedIndex = -1
+  let next = () => {}
 
   const style = document.styleSheets[0];
   style.insertRule(`.playground-plugin-container pre.clickable { border: 1px solid transparent !important; width: auto !important; }`, style.cssRules.length);
@@ -16,7 +17,6 @@ const makePlugin = (utils: PluginUtils) => {
     didMount: (sandbox, container) => {
 
       // This is changed later once all the vars are set up
-      let next = () => {}
       sandbox.editor.addAction({
         id: "next-sample",
         label: "Run the next sample",
@@ -48,6 +48,7 @@ const makePlugin = (utils: PluginUtils) => {
             container.appendChild(lang)
 
             const codeblock = ds.code(block.code)
+            codeblock.textContent = block.code
             const pre = codeblock.parentElement
 
             pre.classList.add("clickable")
@@ -72,7 +73,7 @@ const makePlugin = (utils: PluginUtils) => {
 
               if (!suppressScroll) {
                 const sidebar = document.querySelector(`.playground-plugin-container`)
-                sidebar.scroll({ top: codeblockElem.offsetTop - 90})
+                sidebar.scroll({ top: codeblockElem.offsetTop - 90 })
               }
 
               const isTS = codeblockElem.getAttribute("lang").startsWith("ts")
